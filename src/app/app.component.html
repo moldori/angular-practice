@@ -1,35 +1,12 @@
+<input [(ngModel)] = "name" [disabled]="!checked"> <input type="checkbox" [(ngModel)] = "checked">
 
-<p>
-  {{name}} <br>
-  {{id}} <br>
-  {{isImportant}}
-</p>
+<select [(ngModel)] = "color">
+  <option value='red'>Red</option>
+  <option value='blue'>Blue</option>
+  <option value='green'>Green</option>
+</select>
 
-<button (click) = "greeter()" mat-raised-button>PrettyButton</button>
-
-<br><br>
-<p>
-  Sum:
-</p>
-<input [(ngModel)] = "num1"> <br>
-<input [(ngModel)] = "num2">
-
-<button (click) = "sum()">Count</button>
+<p *ngIf = "name.length >= 10" [ngStyle] = "{color: getColor()}">{{name}}</p>
 
 
-<br>
-<br>
 
-Name: <input [(ngModel)] = "namee"> <br>
-Age: <input [(ngModel)] = "age"> <br>
-
-
-<label>Gender: </label>
-  <mat-radio-group
-  [(ngModel)]="gender">
-  <mat-radio-button *ngFor="let gender of genders" [value]="gender">
-     {{gender}}   
-  </mat-radio-button>
-</mat-radio-group> <br>
-
-<button (click) = "add()">Add</button>
